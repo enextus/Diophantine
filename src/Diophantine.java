@@ -2,7 +2,9 @@ import java.util.Scanner;
 
 public class Diophantine {
     public static void main(String[] args) {
+        boolean found = false;
         Scanner input = new Scanner(System.in);
+
         System.out.print("a*x + b*y + c*z = d\n");
         System.out.print("Enter the values of a: ");
         int a = input.nextInt();
@@ -18,9 +20,15 @@ public class Diophantine {
                 for (int z = 0; z <= d / c; z++) {
                     if (a * x + b * y + c * z == d) {
                         System.out.println("Possible solution: x = " + x + ", y = " + y + ", z = " + z);
+                        found = true;
                     }
+                    System.out.println("-> 5.");
                 }
+                System.out.println("-> 5.");
             }
+            if (!found) System.out.println("No solution found.");
         }
+        System.out.println("-> 5.");
     }
+
 }
