@@ -17,7 +17,7 @@ public class Diophantine {
             for (int y = 0; y <= d / b; y++) {
                 for (int z = 0; z <= d / c; z++) {
                     if (a * x + b * y + c * z == d) {
-                        System.out.println("Solution: x = " + x + ", y = " + y + ", z = " + z);
+                        System.out.println("Possible solution: x = " + x + ", y = " + y + ", z = " + z);
                     }
                 }
             }
