@@ -30,5 +30,4 @@ public class Diophantine {
         }
         System.out.println("-> 5.");
     }
-
 }
