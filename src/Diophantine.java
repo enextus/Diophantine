@@ -22,7 +22,7 @@ public class Diophantine {
                         System.out.println("Possible solution: x = " + x + ", y = " + y + ", z = " + z);
                         found = true;
                     }
-                    System.out.println("-> 5.");
+                    System.out.println("z : " + z);
                 }
                 System.out.println("-> 5.");
             }
