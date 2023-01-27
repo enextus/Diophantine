@@ -1,10 +1,8 @@
 import java.util.Scanner;
-
 public class Diophantine {
     public static void main(String[] args) {
         boolean found = false;
         Scanner input = new Scanner(System.in);
-
         System.out.print("a*x + b*y + c*z = d\n");
         System.out.print("Enter the values of a: ");
         int a = input.nextInt();
