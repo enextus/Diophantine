@@ -49,9 +49,10 @@ public class Diophantine {
         int d = input.nextInt();
 
         for (int x = 0; x <= d / a; x++) {
-            for (int y = 0; y <= (d - (a*x)) / b; y++) {
-                int z = (d - (a*x) - (b*y))/c;
-                if (a * x + b * y + c * z == d) System.out.println("One solution: x = " + x + ", y = " + y + ", z = " + z);
+            for (int y = 0; y <= (d - (a * x)) / b; y++) {
+                int z = (d - (a * x) - (b * y)) / c;
+                if ((a * x + b * y + c * z) == d)
+                    System.out.println("One solution: x = " + x + ", y = " + y + ", z = " + z);
                 solutionFound = true;
             }
         }
