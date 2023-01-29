@@ -1,16 +1,32 @@
 import java.util.Scanner;
 
 public class Diophantine {
+
 	public static void main(String[] args) {
+
 		boolean solutionFound = false;
+
 		Scanner input = new Scanner(System.in);
 		System.out.print("a*x + b*y + c*z = d\n");
+
 		System.out.print("Enter the values of a: ");
-		int a = input.nextInt();
+		int a;
+		while ((a = input.nextInt()) == 0) {
+			System.out.println("a cannot be 0. Enter the values of a again: ");
+		}
+
 		System.out.print("Enter the values of b: ");
-		int b = input.nextInt();
+		int b;
+		while ((b = input.nextInt()) == 0) {
+			System.out.println("b cannot be 0. Enter the values of b again: ");
+		}
+
 		System.out.print("Enter the values of c: ");
-		int c = input.nextInt();
+		int c;
+		while ((c = input.nextInt()) == 0) {
+			System.out.println("c cannot be 0. Enter the values of c again: ");
+		}
+
 		System.out.print("Enter the value of d: ");
 		int d = input.nextInt();
 
