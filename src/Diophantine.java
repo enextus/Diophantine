@@ -1,10 +1,10 @@
 import java.util.Scanner;
+import java.util.Random;
+import java.util.stream.IntStream;
 
 public class Diophantine {
 
 	public static void main(String[] args) {
-
-		boolean solved = false;
 
 		Scanner input = new Scanner(System.in);
 		System.out.print("a*x + b*y + c*z = d\n");
@@ -29,6 +29,8 @@ public class Diophantine {
 
 		System.out.print("Enter the value of d: ");
 		int d = input.nextInt();
+
+		boolean solved = false;
 
 		for (int x = 0; x <= d / a; x++) {
 			for (int y = 0; y <= (d - (a * x)) / b; y++) {
