@@ -4,7 +4,7 @@ public class Diophantine {
 
 	public static void main(String[] args) {
 
-		boolean solutionFound = false;
+		boolean solved = false;
 
 		Scanner input = new Scanner(System.in);
 		System.out.print("a*x + b*y + c*z = d\n");
@@ -35,12 +35,12 @@ public class Diophantine {
 				int z = (d - (a * x) - (b * y)) / c;
 				if ((a * x + b * y + c * z) == d) {
 					System.out.println("One solution: x = " + x + ", y = " + y + ", z = " + z);
-					solutionFound = true;
+					solved = true;
 				}
 			}
 		}
 
-		if (!solutionFound) System.out.println("No solution found.");
+		if (!solved) System.out.println("No solution found.");
 	}
 
 }
