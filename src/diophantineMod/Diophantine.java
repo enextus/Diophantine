@@ -1,4 +1,4 @@
-package DiophantineMod;
+package diophantineMod;
 
 import java.util.Scanner;
 

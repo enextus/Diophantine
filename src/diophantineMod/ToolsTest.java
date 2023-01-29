@@ -1,20 +1,41 @@
-package DiophantineMod;
+package diophantineMod;
 
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static org.testng.Assert.*;
 
 public class ToolsTest {
 
+
+    @Test
+    public void testException() {
+        Exception exception = assertThrows(ArithmeticException.class, () -> {
+            int i = 1 / 0;
+        });
+
+        String expectedMessage = "/ by zero";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
     @Test
     public void testGenInteger() {
+
         final Random RANDOM = new Random();
         int result = RANDOM.nextInt(100) + 1;
+
         assertTrue(result >= 1 && result <= 100);
     }
 

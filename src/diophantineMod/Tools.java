@@ -1,4 +1,4 @@
-package DiophantineMod;
+package diophantineMod;
 
 import java.util.Random;
 import java.util.Scanner;
