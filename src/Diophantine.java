@@ -1,6 +1,9 @@
 import java.util.Scanner;
+import java.util.Random;
+import java.util.stream.IntStream;
 
 public class Diophantine {
+
     public static void main(String[] args) {
 
         boolean foundFlag = false;
