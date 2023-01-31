@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Diophantine {
 
     public static void main(String[] args) {
-
         Tools tm = new Tools();
+
         Scanner input = new Scanner(System.in);
         System.out.print("a*x + b*y + c*z = d\n");
 

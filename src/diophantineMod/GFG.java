@@ -123,4 +123,5 @@ class GFG {
         gausSeidel.print();
         gausSeidel.solve();
     }
+    
 }
