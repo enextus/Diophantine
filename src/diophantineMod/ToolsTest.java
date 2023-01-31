@@ -4,19 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static org.testng.Assert.*;
 
 public class ToolsTest {
-
 
     @Test
     public void testException() {
