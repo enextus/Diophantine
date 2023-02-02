@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Tools {
 
-
     public int genInteger() {
         final Random RANDOM = new Random();
         int randomInt = RANDOM.nextInt(100) + 1;
