@@ -5,7 +5,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+    public void printText() {
+        System.out.println("TEXT");
+    }
+
     public static void main(String[] args) {
+
+        new Main().printText();
+
         Tools tm = new Tools();
         List<Integer> wList = Arrays.asList(1, 2, 3, 4, 5);
 
