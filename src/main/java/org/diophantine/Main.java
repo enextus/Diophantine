@@ -7,14 +7,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Tools tm = new Tools();
-        List<Integer> wList = Arrays.asList(1, 2, 3);
+        List<Integer> wList = Arrays.asList(1, 2, 3, 4, 5);
 
-        for (int rt :
-                wList
-        ) {
-            System.out.println("Try: " + rt);
-            System.out.println("RND: " + tm.genInteger() + "\n");
-        }
+        for (int rt : wList) System.out.println("Try: " + rt + "; RND: " + tm.genInteger() + "\n");
 
         Scanner input = new Scanner(System.in);
         System.out.print("a*x + b*y + c*z = d\n");

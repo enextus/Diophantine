@@ -1,6 +1,5 @@
 package org.diophantine;
 
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,6 +15,7 @@ public class Tools {
 	public int inputValue(String variable, Scanner input) {
 		int value;
 		System.out.print("Enter the values of " + variable + ": ");
+
 		while ((value = input.nextInt()) == 0) {
 			System.out.println(variable + " cannot be 0. Enter the valid values of " + variable + " again: ");
 		}
