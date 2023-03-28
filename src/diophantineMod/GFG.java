@@ -75,6 +75,13 @@ class GFG {
         double[] X = new double[n]; // Approximations
         double[] P = new double[n]; // Prev
         Arrays.fill(X, 0);
+
+        System.out.println("X size: " + X.length);
+
+        for (double el : X) {
+            System.out.println("el: " + el);
+        }
+
         while (true) {
             for (int i = 0; i < n; i++) {
                 double sum = M[i][n]; // b_n
@@ -94,8 +101,10 @@ class GFG {
                 continue;
             boolean stop = true;
             for (int i = 0; i < n && stop; i++)
-                if (Math.abs(X[i] - P[i]) > epsilon)
+                if (Math.abs(X[i] - P[i]) > epsilon) {
                     stop = false;
+                    break;
+                }
             if (stop || iterations == MAX_ITERATIONS)
                 break;
             P = (double[]) X.clone();
@@ -123,5 +132,5 @@ class GFG {
         gausSeidel.print();
         gausSeidel.solve();
     }
-    
+
 }
