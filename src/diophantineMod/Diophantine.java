@@ -1,6 +1,7 @@
 package diophantineMod;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Diophantine {
@@ -16,19 +17,10 @@ public class Diophantine {
         System.out.print("Enter the value of d: ");
         int d = input.nextInt();
 
-        boolean solved = false;
+        List<int[]> solved = findSolution(a, b, c, d);
 
-        for (int x = 0; x <= d / a; x++) {
-            for (int y = 0; y <= (d - a * x) / b; y++) {
-                int z = (d - a * x - b * y) / c;
-                if (a * x + b * y + c * z == d) {
-                    System.out.printf("Solution: x = %d, y = %d, z = %d%n", x, y, z);
-                    solved = true;
-                }
-            }
-        }
+        if (solved.isEmpty()) System.out.println("No solution found.");
 
-        if (!solved) System.out.println("No solution found.");
         input.close();
     }
 
@@ -41,10 +33,23 @@ public class Diophantine {
         return value;
     }
 
-    public static int genInteger() {
-        final Random RANDOM = new Random();
-        int randomInt = RANDOM.nextInt(100) + 1;
-        System.out.println("Random Integer: " + randomInt);
-        return randomInt;
+    public static List<int[]> findSolution(int a, int b, int c, int d) {
+        List<int[]> solutions = new ArrayList<>();
+
+        for (int x = 0; x <= d / a; x++) {
+            for (int y = 0; y <= (d - a * x) / b; y++) {
+                int z = (d - a * x - b * y) / c;
+                if (a * x + b * y + c * z == d) {
+                    solutions.add(new int[]{x, y, z});
+                }
+            }
+        }
+
+        for (int[] solution : solutions) {
+            System.out.printf("Solution: x = %d, y = %d, z = %d%n", solution[0], solution[1], solution[2]);
+        }
+
+        return solutions;
     }
+
 }
