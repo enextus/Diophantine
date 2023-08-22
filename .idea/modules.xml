@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Diophantine.iml" filepath="$PROJECT_DIR$/.idea/Diophantine.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/drei_parameter_diophantum_gleichung.iml" filepath="$PROJECT_DIR$/drei_parameter_diophantum_gleichung.iml" />
+>>>>>>> 545374b2f115c77dadf8a20e0809a22698b25b54
     </modules>
   </component>
 </project>
