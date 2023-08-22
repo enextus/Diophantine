@@ -14,7 +14,6 @@ class DiophantineTest {
     void findSolution() {
     }
 
-/*
     @Test
     void testFindSolution() {
         List<int[]> solutions = Diophantine.findSolution(1, 1, 1, 6);
@@ -30,8 +29,7 @@ class DiophantineTest {
         solutions = Diophantine.findSolution(1, 2, 3, 4);
         assertTrue(solutions.isEmpty());
     }
-*/
-
+    
     public boolean containsSolution(List<int[]> solutions, int[] target) {
         for (int[] solution : solutions) {
             if (solution.length == target.length) {
