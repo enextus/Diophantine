@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.diophantine</groupId>
-    <artifactId>diophantine_mvn</artifactId>
+    <artifactId>diophantine</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -60,7 +60,8 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>org.diophantine.Main</mainClass>
+                            <mainClass>Diophantine</mainClass>
+                            <mainClass>Diophantine</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

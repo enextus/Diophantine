@@ -1,5 +1,3 @@
-package diophantineMod;
-
 // Implementing Gauss Seidel Method in Java
 
 import java.io.IOException;
@@ -19,9 +17,9 @@ class GFG {
     public void print() // printing
     {
         int n = M.length;
-        for (int i = 0; i < n; i++) {
+        for (double[] doubles : M) {
             for (int j = 0; j < n + 1; j++)
-                System.out.print(M[i][j] + " ");
+                System.out.print(doubles[j] + " ");
             System.out.println();
         }
     }
@@ -33,8 +31,7 @@ class GFG {
         if (r == M.length) {
             double[][] T = new double[n][n + 1];
             for (int i = 0; i < R.length; i++) {
-                for (int j = 0; j < n + 1; j++)
-                    T[i][j] = M[R[i]][j];
+                System.arraycopy(M[R[i]], 0, T[i], 0, n + 1);
             }
             M = T;
             return true;
@@ -74,13 +71,12 @@ class GFG {
         double epsilon = 1e-15;
         double[] X = new double[n]; // Approximations
         double[] P = new double[n]; // Prev
+
         Arrays.fill(X, 0);
 
         System.out.println("X size: " + X.length);
 
-        for (double el : X) {
-            System.out.println("el: " + el);
-        }
+        for (double el : X) System.out.println("el: " + el);
 
         while (true) {
             for (int i = 0; i < n; i++) {
@@ -92,34 +88,42 @@ class GFG {
                 // row calculation
                 X[i] = 1 / M[i][i] * sum;
             }
+
             System.out.print("X" + iterations + " = {");
-            for (int i = 0; i < n; i++)
-                System.out.print(X[i] + " ");
+
+            for (int i = 0; i < n; i++) System.out.print(X[i] + " ");
+
             System.out.println("}");
             iterations++;
-            if (iterations == 1)
-                continue;
+
+            if (iterations == 1) continue;
+
             boolean stop = true;
+
             for (int i = 0; i < n && stop; i++)
                 if (Math.abs(X[i] - P[i]) > epsilon) {
                     stop = false;
                     break;
                 }
-            if (stop || iterations == MAX_ITERATIONS)
-                break;
+
+            if (stop || iterations == MAX_ITERATIONS) break;
+
             P = (double[]) X.clone();
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         PrintWriter writer = new PrintWriter(System.out, true);
         int n = 2, k = 1;
         double[][] M = new double[n][n + 1];
+
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n + 1; j++)
                 M[i][j] = k++;
         }
+
         GFG gausSeidel = new GFG(M);
+
         if (!gausSeidel.makeDominant()) {
 
             // if it is found that a matrix cannot be
@@ -128,6 +132,7 @@ class GFG {
 
             writer.println("The system isn't diagonally dominant: " + "The method cannot guarantee convergence.");
         }
+
         writer.println();
         gausSeidel.print();
         gausSeidel.solve();
