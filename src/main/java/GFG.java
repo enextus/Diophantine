@@ -1,6 +1,5 @@
 // Implementing Gauss Seidel Method in Java
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 
