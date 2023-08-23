@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Diophantine {
+public class App {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("a*x + b*y + c*z = d\n");
