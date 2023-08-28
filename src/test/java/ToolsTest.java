@@ -25,7 +25,6 @@ public class ToolsTest {
 
     @Test
     public void testGenInteger() {
-
         final Random RANDOM = new Random();
         int result = RANDOM.nextInt(100) + 1;
 
@@ -38,6 +37,7 @@ public class ToolsTest {
         InputStream inputStream = new ByteArrayInputStream(INPUT_5.getBytes());
         Scanner input = new Scanner(inputStream);
         int result = tm.inputValue("variable", input);
+
         assertEquals(5, result);
     }
 
@@ -47,6 +47,7 @@ public class ToolsTest {
         InputStream inputStream = new ByteArrayInputStream(INPUT_100.getBytes());
         Scanner input = new Scanner(inputStream);
         int result = tm.inputValue("variable", input);
+
         assertEquals(100, result);
     }
 
