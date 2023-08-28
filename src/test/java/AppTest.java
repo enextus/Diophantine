@@ -8,11 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class AppTest {
     @Test
     void testFindSolution() {
-        List<int[]> solutions = App.findSolution(1, 1, 1, 6);
+        List<int[]> solutions = DiophantineSolver.findSolution(1, 1, 1, 6);
         assertFalse(solutions.isEmpty());
         assertTrue(containsSolution(solutions, new int[]{1, 2, 3}));
         assertTrue(containsSolution(solutions, new int[]{3, 2, 1}));
-
     }
 
     public boolean containsSolution(List<int[]> solutions, int[] target) {

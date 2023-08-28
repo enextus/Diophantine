@@ -14,7 +14,7 @@ public class App {
         System.out.print("Enter the value of d: ");
         int d = input.nextInt();
 
-        List<int[]> solved = findSolution(a, b, c, d);
+        List<int[]> solved = DiophantineSolver.findSolution(a, b, c, d);
 
         if (solved.isEmpty()) System.out.println("No solution found.");
 
@@ -28,26 +28,6 @@ public class App {
             System.out.printf("%s cannot be 0. Enter a valid value for %s: ", var, var);
         }
         return value;
-    }
-
-    public static List<int[]> findSolution(int a, int b, int c, int d) {
-        List<int[]> solutions = new ArrayList<>();
-
-        for (int x = -d / Math.abs(a); x <= d / Math.abs(a); x++) {
-            for (int y = -d / Math.abs(b); y <= d / Math.abs(b); y++) {
-                for (int z = -d / Math.abs(c); z <= d / Math.abs(c); z++) {
-                    if (a * x + b * y + c * z == d) {
-                        solutions.add(new int[]{x, y, z});
-                    }
-                }
-            }
-        }
-
-        for (int[] solution : solutions) {
-            System.out.printf("Solution: x = %d, y = %d, z = %d%n", solution[0], solution[1], solution[2]);
-        }
-
-        return solutions;
     }
 
 }
