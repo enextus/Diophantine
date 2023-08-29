@@ -8,9 +8,7 @@ public class DiophantineSolver {
         for (int x = -d / Math.abs(a); x <= d / Math.abs(a); x++) {
             for (int y = -d / Math.abs(b); y <= d / Math.abs(b); y++) {
                 for (int z = -d / Math.abs(c); z <= d / Math.abs(c); z++) {
-                    if (a * x + b * y + c * z == d) {
-                        solutions.add(new int[]{x, y, z});
-                    }
+                    if (a * x + b * y + c * z == d) solutions.add(new int[]{x, y, z});
                 }
             }
         }

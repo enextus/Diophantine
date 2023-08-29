@@ -92,6 +92,7 @@ class GFG {
 			// Условия остановки
 			if (iterations == 1) continue;
 			boolean stop = true;
+
 			for (int i = 0; i < n && stop; i++)
 				if (Math.abs(X[i] - P[i]) > epsilon) {
 					stop = false;
