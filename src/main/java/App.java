@@ -17,6 +17,11 @@ public class App {
 
 		if (solved.isEmpty()) System.out.println("No solution found.");
 
+
+		for (int[] solution : solved) {
+			System.out.printf("x = %d, y = %d, z = %d%n", solution[0], solution[1], solution[2]);
+		}
+
 		input.close();
 	}
 

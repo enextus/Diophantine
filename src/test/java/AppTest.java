@@ -47,9 +47,8 @@ class AppTest {
         assertFalse(solutions.isEmpty());
         assertTrue(containsSolution(solutions, new int[]{0, 0, 0}));
     }
-
-
 /*
+
     @Test
     void testFindSolutionNegativeCoefficients() {
         List<int[]> solutions = DiophantineSolver.findSolution(-1, -1, -1, -6);
@@ -58,6 +57,15 @@ class AppTest {
         assertTrue(containsSolution(solutions, new int[]{-3, -2, -1}));
     }
 */
+
+    @Test
+    void testFindSolutionNegativeCoefficients() {
+        List<int[]> solutions = DiophantineSolver.findSolution(-1, -1, -1, -6);
+        assertFalse(solutions.isEmpty());
+        assertFalse(containsSolution(solutions, new int[]{-1, -2, -3}));
+        assertFalse(containsSolution(solutions, new int[]{-3, -2, -1}));
+    }
+
 
 /*    @Test
     void testFindSolutionMixedCoefficients() {

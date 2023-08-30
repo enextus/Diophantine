@@ -13,10 +13,6 @@ public class DiophantineSolver {
             }
         }
 
-        for (int[] solution : solutions) {
-            System.out.printf("Solution: x = %d, y = %d, z = %d%n", solution[0], solution[1], solution[2]);
-        }
-
         return solutions;
     }
 
