@@ -106,37 +106,38 @@ class GFG {
 		}
 	}
 
-	// Точка входа в программу
+	// Entry point of the program
 	public static void main(String[] args) {
 		PrintWriter writer = new PrintWriter(System.out, true);
 
-		// Создается двумерный массив M размером 2 x 3:
+		// A two-dimensional array M of size 2 x 3 is created:
 		int n = 2, k = 1;
 		double[][] M = new double[n][n + 1];
 
-		// Здесь вы создаете матрицу M с числом строк n и числом столбцов n + 1.
-		// Значения этой матрицы устанавливаются на основе переменной k,
-		// которая начинается с 1 и увеличивается на 1 с каждым новым элементом.
-		// В итоге матрица M будет выглядеть следующим образом:
+		// Here, you create a matrix M with the number of rows n and the number of columns n + 1.
+		// The values of this matrix are set based on variable k,
+		// which starts from 1 and increases by 1 with each new element.
+		// Eventually, matrix M will look like this:
 		// 1 2 3
 		// 4 5 6
-		// Это значит, что ваша система уравнений будет такова:
+		// This means that your system of equations will be as follows:
 
 		// 1*X1 + 2*X2 = 3
 		// 4*X1 + 5*X2 = 6
 
-		// Инициализация матрицы
+		// Matrix Initialization
 		for (int i = 0; i < n; i++) for (int j = 0; j < n + 1; j++) M[i][j] = k++;
 
-		// Создание объекта класса GFG и решение системы уравнений
+		// Creating an object of class GFG and solving the system of equations
 		GFG gausSeidel = new GFG(M);
 
 		if (!gausSeidel.makeDominant())
-			writer.println("Система не является диагонально доминирующей: метод не может гарантировать сходимость.");
+			writer.println("The system is not diagonally dominant: the method cannot guarantee convergence.");
 
 		writer.println();
 		gausSeidel.print();
 		gausSeidel.solve();
 	}
+
 
 }
