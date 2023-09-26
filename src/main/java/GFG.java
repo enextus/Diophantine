@@ -1,19 +1,19 @@
-// Реализация метода Гаусса-Зейделя на Java
+// Implementation of the Gauss-Seidel method in Java
 
 import java.io.PrintWriter;
 import java.util.Arrays;
 
 class GFG {
-	// Задаем максимальное количество итераций для предотвращения бесконечного цикла
+	// Setting the maximum number of iterations to prevent an infinite loop
 	public static final int MAX_ITERATIONS = 100;
 	private double[][] M;
 
-	// Конструктор для инициализации матрицы
+	// Constructor for matrix initialization
 	public GFG(double[][] matrix) {
 		M = matrix;
 	}
 
-	// Метод для вывода матрицы
+	// Method to print the matrix
 	public void print() {
 		int n = M.length;
 		for (double[] doubles : M) {
@@ -22,7 +22,7 @@ class GFG {
 		}
 	}
 
-	// Метод для преобразования матрицы в диагонально доминирующую (если это возможно)
+	// Method to transform the matrix into a diagonally dominant one (if possible)
 	public boolean transformToDominant(int r, boolean[] V, int[] R) {
 		int n = M.length;
 
@@ -50,7 +50,7 @@ class GFG {
 		return false;
 	}
 
-	// Метод для проверки, является ли матрица диагонально доминирующей
+	// Method to check if the matrix is diagonally dominant
 	public boolean makeDominant() {
 		boolean[] visited = new boolean[M.length];
 		int[] rows = new int[M.length];
@@ -58,13 +58,13 @@ class GFG {
 		return transformToDominant(0, visited, rows);
 	}
 
-	// Метод для нахождения решения системы уравнений после выполнения всех условий
+	// Method to find the solution of the system of equations after meeting all conditions
 	public void solve() {
 		int iterations = 0;
 		int n = M.length;
 		double epsilon = 1e-15;
-		double[] X = new double[n]; // Текущие приближения
-		double[] P = new double[n]; // Предыдущие значения
+		double[] X = new double[n]; // Current approximations
+		double[] P = new double[n]; // Previous values
 
 		Arrays.fill(X, 0);
 
@@ -73,7 +73,7 @@ class GFG {
 		for (double el : X) System.out.println("el: " + el);
 
 		while (true) {
-			// Реализация итераций метода Гаусса-Зейделя
+			// Implementation of Gauss-Seidel method iterations
 			for (int i = 0; i < n; i++) {
 				double sum = M[i][n];
 				for (int j = 0; j < n; j++)
@@ -82,14 +82,14 @@ class GFG {
 				X[i] = 1 / M[i][i] * sum;
 			}
 
-			// Вывод текущего приближения
+			// Printing the current approximation
 			System.out.print("X" + iterations + " = {");
 			for (int i = 0; i < n; i++) System.out.print(X[i] + " ");
 
 			System.out.println("}");
 			iterations++;
 
-			// Условия остановки
+			// Stopping conditions
 			if (iterations == 1) continue;
 			boolean stop = true;
 
@@ -101,10 +101,11 @@ class GFG {
 
 			if (stop || iterations == MAX_ITERATIONS) break;
 
-			// Обновление массива предыдущих значений без полного копирования
+			// Updating the array of previous values without full copying
 			System.arraycopy(X, 0, P, 0, n);
 		}
 	}
+}
 
 	// Entry point of the program
 	public static void main(String[] args) {
