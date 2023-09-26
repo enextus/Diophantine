@@ -2,23 +2,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Tools {
-	// Метод для генерации случайного целого числа от 1 до 100
+	// Method to generate a random integer from 1 to 100
 	public int genInteger() {
-		final Random RANDOM = new Random(); // Инициализация генератора случайных чисел
-		int randomInt = RANDOM.nextInt(100) + 1; // Генерация случайного числа
-		System.out.println("Random Integer: " + randomInt); // Вывод числа на экран
-		return randomInt; // Возврат сгенерированного числа
+		final Random RANDOM = new Random(); // Initialize the random number generator
+		int randomInt = RANDOM.nextInt(100) + 1; // Generate a random number
+		System.out.println("Random Integer: " + randomInt); // Print the number to the screen
+		return randomInt; // Return the generated number
 	}
 
-	// Метод для получения целочисленного значения от пользователя с проверкой на ноль
+	// Method to get an integer value from the user with zero check
 	public int inputValue(String variable, Scanner input) {
-		int value; // Объявление переменной для хранения значения
-		System.out.print("Enter the values of " + variable + ": "); // Приглашение к вводу
+		int value; // Declare a variable to store the value
+		System.out.print("Enter the value of " + variable + ": "); // Prompt for input
 
-		// Цикл для получения ненулевого значения
+		// Loop to get a non-zero value
 		while ((value = input.nextInt()) == 0)
-			System.out.println(variable + " cannot be 0. Enter the valid values of " + variable + " again: "); // Сообщение об ошибке
-		return value; // Возврат введенного значения
+			System.out.println(variable + " cannot be 0. Enter a valid value of " + variable + " again: "); // Error message
+		return value; // Return the entered value
 	}
-
 }
