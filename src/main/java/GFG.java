@@ -1,14 +1,14 @@
-// Implementation of the Gauss-Seidel method in Java
+// Implementation of Gauss-Seidel method in Java
 
 import java.io.PrintWriter;
 import java.util.Arrays;
 
 class GFG {
-	// Setting the maximum number of iterations to prevent an infinite loop
+	// Set the maximum number of iterations to prevent infinite loop
 	public static final int MAX_ITERATIONS = 100;
 	private double[][] M;
 
-	// Constructor for matrix initialization
+	// Constructor to initialize the matrix
 	public GFG(double[][] matrix) {
 		M = matrix;
 	}
@@ -16,13 +16,13 @@ class GFG {
 	// Method to print the matrix
 	public void print() {
 		int n = M.length;
-		for (double[] doubles : M) {
-			for (int j = 0; j < n + 1; j++) System.out.print(doubles[j] + " ");
+		for (double[] row : M) {
+			for (int j = 0; j < n + 1; j++) System.out.print(row[j] + " ");
 			System.out.println();
 		}
 	}
 
-	// Method to transform the matrix into a diagonally dominant one (if possible)
+	// Method to transform the matrix into diagonally dominant form (if possible)
 	public boolean transformToDominant(int r, boolean[] V, int[] R) {
 		int n = M.length;
 
@@ -58,7 +58,7 @@ class GFG {
 		return transformToDominant(0, visited, rows);
 	}
 
-	// Method to find the solution of the system of equations after meeting all conditions
+	// Method to find the solution to the system of equations after satisfying all conditions
 	public void solve() {
 		int iterations = 0;
 		int n = M.length;
@@ -73,7 +73,7 @@ class GFG {
 		for (double el : X) System.out.println("el: " + el);
 
 		while (true) {
-			// Implementation of Gauss-Seidel method iterations
+			// Implementation of Gauss-Seidel iterations
 			for (int i = 0; i < n; i++) {
 				double sum = M[i][n];
 				for (int j = 0; j < n; j++)
@@ -82,7 +82,7 @@ class GFG {
 				X[i] = 1 / M[i][i] * sum;
 			}
 
-			// Printing the current approximation
+			// Print the current approximation
 			System.out.print("X" + iterations + " = {");
 			for (int i = 0; i < n; i++) System.out.print(X[i] + " ");
 
@@ -101,23 +101,22 @@ class GFG {
 
 			if (stop || iterations == MAX_ITERATIONS) break;
 
-			// Updating the array of previous values without full copying
+			// Update the array of previous values without full copying
 			System.arraycopy(X, 0, P, 0, n);
 		}
 	}
-}
 
 	// Entry point of the program
 	public static void main(String[] args) {
 		PrintWriter writer = new PrintWriter(System.out, true);
 
-		// A two-dimensional array M of size 2 x 3 is created:
+		// Create a 2x3 matrix M:
 		int n = 2, k = 1;
 		double[][] M = new double[n][n + 1];
 
-		// Here, you create a matrix M with the number of rows n and the number of columns n + 1.
+		// Here, you create matrix M with n rows and n + 1 columns.
 		// The values of this matrix are set based on variable k,
-		// which starts from 1 and increases by 1 with each new element.
+		// which starts from 1 and increments by 1 for each new element.
 		// Eventually, matrix M will look like this:
 		// 1 2 3
 		// 4 5 6
@@ -126,19 +125,17 @@ class GFG {
 		// 1*X1 + 2*X2 = 3
 		// 4*X1 + 5*X2 = 6
 
-		// Matrix Initialization
+		// Initialize the matrix
 		for (int i = 0; i < n; i++) for (int j = 0; j < n + 1; j++) M[i][j] = k++;
 
-		// Creating an object of class GFG and solving the system of equations
-		GFG gausSeidel = new GFG(M);
+		// Create an object of the GFG class and solve the system of equations
+		GFG gaussSeidel = new GFG(M);
 
-		if (!gausSeidel.makeDominant())
+		if (!gaussSeidel.makeDominant())
 			writer.println("The system is not diagonally dominant: the method cannot guarantee convergence.");
 
 		writer.println();
-		gausSeidel.print();
-		gausSeidel.solve();
+		gaussSeidel.print();
+		gaussSeidel.solve();
 	}
-
-
 }
