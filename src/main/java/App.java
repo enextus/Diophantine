@@ -9,10 +9,9 @@ public class App {
 		int a = inputValue("a", input);
 		int b = inputValue("b", input);
 		int c = inputValue("c", input);
-
 		System.out.print("Enter the value of d: ");
-		int d = input.nextInt();
 
+		int d = input.nextInt();
 		List<int[]> solved = DiophantineSolver.findSolution(a, b, c, d);
 
 		if (solved.isEmpty()) System.out.println("No solution found.");
@@ -27,9 +26,11 @@ public class App {
 	private static int inputValue(String var, Scanner input) {
 		int value;
 		System.out.printf("Enter the value of %s: ", var);
+
 		while ((value = input.nextInt()) == 0) {
 			System.out.printf("%s cannot be 0. Enter a valid value for %s: ", var, var);
 		}
+
 		return value;
 	}
 
