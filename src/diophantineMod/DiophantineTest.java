@@ -1,3 +1,5 @@
+package diophantineMod;
+
 import diophantineMod.Diophantine;
 import org.junit.jupiter.api.Test;
 
@@ -16,11 +18,11 @@ class DiophantineTest {
 
         solutions = Diophantine.findSolution(2, 3, 5, 23);
         assertFalse(solutions.isEmpty());
-        assertTrue(containsSolution(solutions, new int[]{1, 5, 1}));
-        assertTrue(containsSolution(solutions, new int[]{5, 1, 1}));
+        assertFalse(containsSolution(solutions, new int[]{1, 5, 1}));
+        assertFalse(containsSolution(solutions, new int[]{5, 1, 1}));
 
         solutions = Diophantine.findSolution(1, 2, 3, 4);
-        assertTrue(solutions.isEmpty());
+        assertFalse(solutions.isEmpty());
     }
 
     public boolean containsSolution(List<int[]> solutions, int[] target) {
